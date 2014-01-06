@@ -1,32 +1,11 @@
 var sizes = [];
-var junk = [];
-var types = [];
-jQuery("body, body *").each(function(a,b) {
-    console.log(b.nodeType);
-    // Get the size
+jQuery(textNodes()).each(function(a,b) {
     size = jQuery(b).css("font-size");
-    
-    text = jQuery(b).contents().filter(function() {
-        return this.nodeType == 3;
-    }).text();
-//    console.log(text);
-//    console.log(typeof(text));
-  //      types[b.nodeType] = typeof(types[b.nodeType]) === "undefined" ? [] : types[b.nodeType];
-//        types[b.nodeType].push(b);
-        
-    if(text != "") {
-        sizes[size] = typeof(sizes[size]) === "undefined" ? [] : sizes[size];
-        sizes[size].push(b);
-    } else {
-        junk[size] = typeof(junk[size]) === "undefined" ? [] : junk[size];
-        junk[size].push(b);
-
-    }
+    sizes[size] = typeof(sizes[size]) === "undefined" ? [] : sizes[size];
+    sizes[size].push(b);
 })
 
 console.log(sizes);
-console.log(junk);
-console.log(types);
 
 function textNodes() {
     var all = document.getElementsByTagName("*");
