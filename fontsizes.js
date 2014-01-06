@@ -1,8 +1,10 @@
 var sizes = [];
-jQuery(textNodes()).each(function(a,b) {
-  size = jQuery(b).css("font-size");
+jQuery(textNodes()).each(function() {
+  size = jQuery(this).css("font-size");
   sizes[size] = typeof(sizes[size]) === "undefined" ? [] : sizes[size];
-  sizes[size].push(b);
+  if(jQuery(this).is(":visible")) {
+    sizes[size].push(b);
+  }
 })
 
 console.log(sizes);
