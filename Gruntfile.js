@@ -17,6 +17,20 @@ module.exports = function(grunt) {
           'Gruntfile.js'
         ],
         tasks: ['jshint']
+      },
+      mainjs:{
+        files: [
+          'fontsize.js',
+          'Gruntfile.js'
+        ],
+        js: ['fontsize.js'],
+        // jsIds: ['jquery-min','jquery'],
+        // css: ['http://static.jquery.com/files/rocker/css/reset.css'],
+        // body: 'test.js',
+        out: 'bookmarklet.js',
+        amdify: true,
+        jshint: true,
+        timestamp: true
       }
     },
     compass: {
@@ -40,6 +54,7 @@ module.exports = function(grunt) {
   // grunt.loadNpmTasks('grunt-contrib-compass');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-bookmarklet-thingy');
 
   // Register the default tasks.
   grunt.registerTask('default', ['watch']);
