@@ -3,7 +3,7 @@ jQuery(textNodes()).each(function() {
   size = jQuery(this).css("font-size");
   sizes[size] = typeof(sizes[size]) === "undefined" ? [] : sizes[size];
   if(jQuery(this).is(":visible")) {
-    sizes[size].push(b);
+    sizes[size].push(this);
   }
 })
 
